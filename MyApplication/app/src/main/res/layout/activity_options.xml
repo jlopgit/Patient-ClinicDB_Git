@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.panggolowitski.clinicapplication.Menu">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/newEntry"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="New Entry"
+                android:onClick="newEntry"
+                />
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:onClick="search"
+                android:layout_below="@+id/newEntry"
+                />
+
+            <TextView
+                android:id="@+id/extraline0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/search"/>
+
+            <TextView
+                android:id="@+id/extraLineSearchInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search From"
+                android:visibility="invisible"
+                android:layout_below="@+id/extraline0"
+                />
+
+            <TextView
+                android:id="@+id/extraLineInputInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Input Form"
+                android:visibility="invisible"
+                android:layout_below="@+id/extraline0"
+                />
+
+            <EditText
+                android:id="@+id/firstnameSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:inputType="textCapCharacters"
+                android:layout_below="@+id/extraLineInputInfo"
+                android:visibility="invisible"
+                android:hint="Enter First Name"
+                />
+
+            <EditText
+                android:id="@+id/lastnameSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:inputType="textCapCharacters"
+                android:layout_below="@+id/firstnameSearch"
+                android:visibility="invisible"
+                android:hint="Enter Last Name"
+                />
+
+            <EditText
+                android:id="@+id/dobSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:inputType="date"
+                android:layout_below="@+id/lastnameSearch"
+                android:visibility="invisible"
+                android:hint="Enter Date of Birth(mm/dd/yy)"
+                />
+
+            <EditText
+                android:id="@+id/ssnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:inputType="number"
+                android:layout_below="@+id/dobSearch"
+                android:visibility="invisible"
+                android:hint="Enter Social Security Number(no -'s)"
+                />
+
+            <Button
+                android:id="@+id/find"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ssnSearch"
+                android:onClick="findPatient"
+                android:visibility="invisible"
+                android:text="Find Patient"
+                />
+            
+            <!-- End of Search Views -->
+
+            <EditText
+                android:id="@+id/firstnameInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_below="@+id/extraLineInputInfo"
+                android:inputType="textCapCharacters"
+                android:visibility="invisible"
+                android:hint="Enter First Name"
+                />
+
+            <EditText
+                android:id="@+id/lastnameInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_below="@+id/firstnameInput"
+                android:inputType="textCapCharacters"
+                android:visibility="invisible"
+                android:hint="Enter Last Name"
+                />
+
+            <EditText
+                android:id="@+id/dobInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_below="@+id/lastnameInput"
+                android:inputType="date"
+                android:maxLength="8"
+                android:visibility="invisible"
+                android:hint="Enter Date of Birth(mm/dd/yy)"
+                />
+
+            <EditText
+                android:id="@+id/ssnInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_below="@+id/dobInput"
+                android:inputType="number"
+                android:maxLength="9"
+                android:visibility="invisible"
+                android:hint="Enter SSN(no '-'s) or 0 if NA"
+                />
+
+            <EditText
+                android:id="@+id/addressInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:inputType="textCapCharacters"
+                android:layout_below="@+id/ssnInput"
+                android:visibility="invisible"
+                android:hint="Enter Address"
+                />
+<!--
+            <EditText
+                android:id="@+id/aptNumberInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_below="@+id/addressInput"
+                android:inputType="textCapCharacters"
+                android:maxLength="5"
+                android:visibility="invisible"
+                android:hint="Enter Enter Apartment Number or 'NA'"
+                />
+
+            <EditText
+                android:id="@+id/cityInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:inputType="textCapCharacters"
+                android:layout_below="@+id/aptNumberInput"
+                android:visibility="invisible"
+                android:hint="Enter City"
+                />
+
+            <EditText
+                android:id="@+id/stateInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:inputType="textCapCharacters"
+                android:maxLength="2"
+                android:visibility="invisible"
+                android:layout_below="@+id/cityInput"
+                android:hint="Enter State"
+                />
+
+            <EditText
+                android:id="@+id/zipcodeInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:inputType="number"
+                android:maxLength="5"
+                android:layout_below="@+id/stateInput"
+                android:visibility="invisible"
+                android:hint="Enter Zipcode"
+                />
+    -->
+
+            <TextView
+                android:id="@+id/filler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/addressInput"
+                />
+
+            <TextView
+                android:id="@+id/extraline2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/filler"
+                android:visibility="invisible"
+                android:text="Insurance Information"
+                />
+
+            <TextView
+                android:id="@+id/filler0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/extraline2"
+                />
+
+
+
+            <EditText
+                android:id="@+id/insuranceNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:inputType="textCapCharacters"
+                android:layout_below="@+id/filler0"
+                android:visibility="invisible"
+                android:hint="Enter Insurance Name or 'NA'"
+                />
+
+            <EditText
+                android:id="@+id/insuranceNumberInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+                android:inputType="textCapCharacters"
+                android:layout_below="@+id/insuranceNameInput"
+                android:visibility="invisible"
+                android:hint="Enter Insurance Policy Number or 'NA'"
+                />
+
+            <TextView
+                android:id="@+id/filler1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/insuranceNumberInput"
+                />
+
+            <TextView
+                android:id="@+id/extraline3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/filler1"
+                android:visibility="invisible"
+                android:text="Service information"
+                />
+
+            <TextView
+                android:id="@+id/filler2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/extraline3"
+                />
+
+            <EditText
+                android:id="@+id/serviceDateInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_below="@+id/filler2"
+                android:inputType="date"
+                android:maxLength="8"
+                android:visibility="invisible"
+                android:hint="Enter Date of Visit(mm/dd/yy)"
+                />
+
+            <EditText
+                android:id="@+id/conditionInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_below="@+id/serviceDateInput"
+                android:minLines="1"
+                android:maxLines="5"
+                android:inputType="textCapCharacters|textMultiLine"
+                android:visibility="invisible"
+                android:hint="Enter Patient Condition"
+                />
+
+            <EditText
+                android:id="@+id/treatmentInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_below="@+id/conditionInput"
+                android:minLines="1"
+                android:maxLines="5"
+                android:inputType="textCapCharacters|textMultiLine"
+                android:visibility="invisible"
+                android:hint="Enter Condition Treatment"
+            />
+
+            <TextView
+                android:id="@+id/extraline4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/treatmentInput"/>
+
+            <Button
+                android:id="@+id/saveInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/extraline4"
+                android:visibility="invisible"
+                android:text="Save Entry"
+                android:onClick="save"
+                />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
